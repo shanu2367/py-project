@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="text-center mt-20">
+
+    <h1 class="text-2xl font-bold">QR Generator</h1>
+
+    <form action="/generate" method="get">
+        <input type="text" name="url" placeholder="Enter URL"
+            class="border p-2" required>
+
+        <button class="bg-blue-500 text-white p-2">
+            Generate QR
+        </button>
+    </form>
+    <div class="mt-5">
+
+    {% if qr %}
+        <h2 class="text-xl font-bold mb-3">Your QR Code</h2>
+
+        <img src="{{ qr }}" 
+             width="200" 
+             class="mx-auto border p-2">
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
